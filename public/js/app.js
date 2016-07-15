@@ -16,7 +16,8 @@ var App = React.createClass({
                 <form>
                   <input type="text" className="form-control" onChange={this.changeText} value={this.state.text} /><br/>
                   <button className="btn btn-primary">Add</button>
-                </form>
+                </form><br/>
+                <ComponentTwo />
               </div>
             </div>
         )
@@ -26,6 +27,16 @@ var App = React.createClass({
           text: e.target.value
         });
     }
+});
+
+var ComponentTwo = React.createClass({
+  render: function (){
+    return(
+      <div>
+        Component two
+      </div>
+    );
+  }
 });
 
 ReactDOM.render(
