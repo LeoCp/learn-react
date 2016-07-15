@@ -1,5 +1,17 @@
-class Jumbotron extends React.Component {
-    render(){
+
+var Jumbotron = React.createClass({
+
+    //
+    getDefaultProps: function (){
+      return{
+          title:"This is my title",
+          text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+          link:"http://leocp.github.io/"
+      }
+    },
+
+    //
+    render: function () {
         return (
             <div>
               <div className="jumbotron">
@@ -10,13 +22,9 @@ class Jumbotron extends React.Component {
             </div>
         )
     }
-}
+})
 
 ReactDOM.render(
-    <Jumbotron
-      title= "This is the title"
-      text= "Lorem ipsum dolvelit esse cillum dolore eu fugiat nulla pariatur."
-      link="http://leocp.github.io/"
-    />,
+    <Jumbotron/>,
     document.getElementById("jumbotron")
 )
