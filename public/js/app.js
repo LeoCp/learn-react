@@ -1,10 +1,17 @@
+'use strict';
 
 var Jumbotron = React.createClass({
+
+    //Validation
+    propTypes: {
+      title:React.PropTypes.string.isRequired,
+      text:React.PropTypes.string.isRequired
+    },
 
     //
     getDefaultProps: function (){
       return{
-          title:"This is my title",
+          title:"This is the title",
           text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
           link:"http://leocp.github.io/"
       }
