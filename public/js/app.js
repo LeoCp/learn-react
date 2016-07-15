@@ -13,7 +13,6 @@ var Jumbotron = React.createClass({
       return{
           title:"This is the title",
           text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-          link:"http://leocp.github.io/"
       }
     },
 
@@ -24,10 +23,13 @@ var Jumbotron = React.createClass({
               <div className="jumbotron">
                 <h1>{this.props.title}</h1>
                 <p>{this.props.text}</p>
-                <a className="btn btn-primary" href={this.props.link}>Learn more</a>
+                <button onClick={this.onClick.bind(this, "Hello")}className="btn btn-primary">Learn more</button>
               </div>
             </div>
         )
+    },
+    onClick: function (greeting) {
+      alert(greeting);
     }
 })
 
