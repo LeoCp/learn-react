@@ -1,43 +1,63 @@
 'use strict';
 
 var App = React.createClass({
-
-    getInitialState: function () {
+    getInitialState: function (){
       return {
-          text:"This is the text"
-      };
+        text:'',
+        todos:[
+          {id:1,name:"Leonardo",age:20,user:"Leocp"},
+          {id:2,name:"Neide",age:21,user:"Neidesg"},
+          {id:3,name:"Nathalia",age:19,user:"nathsg"}
+        ]
+      }
     },
-
     render: function () {
         return (
             <div>
               <div className="jumbotron">
-                <h1>My app</h1><br/>
-
-                <form>
-                  <input type="text" className="form-control" onChange={this.changeText} value={this.state.text} /><br/>
-                  
-                </form><br/>
-                <ComponentTwo text={this.state.text}/>
+              <TodoForm/>
+              <TodoList todos={this.state.todos}/>
               </div>
             </div>
         )
-    },
-    changeText: function (e){
-        this.setState({
-          text: e.target.value
-        });
     }
 });
 
-var ComponentTwo = React.createClass({
-  render: function (){
-    return(
-      <div>
-        {this.props.text}
-      </div>
-    );
-  }
+var TodoForm = React.createClass({
+
+    render: function () {
+        return (
+            <div>TodoForm</div>
+        )
+    }
+});
+
+var TodoList = React.createClass({
+
+    render: function () {
+        return (
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.props.todos.map(todo => {
+                  return <tr>
+                      <td>{todo.name}</td>
+                      <td>{todo.age}</td>
+                      <td>{todo.user}</td>
+                    </tr>
+                })
+              }
+            </tbody>
+          </table>
+        )
+    }
 });
 
 ReactDOM.render(
