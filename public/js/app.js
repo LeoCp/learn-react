@@ -12,12 +12,13 @@ var App = React.createClass({
         return (
             <div>
               <div className="jumbotron">
-                <h1>{this.state.text}</h1>
+                <h1>My app</h1><br/>
+
                 <form>
                   <input type="text" className="form-control" onChange={this.changeText} value={this.state.text} /><br/>
-                  <button className="btn btn-primary">Add</button>
+                  
                 </form><br/>
-                <ComponentTwo />
+                <ComponentTwo text={this.state.text}/>
               </div>
             </div>
         )
@@ -33,7 +34,7 @@ var ComponentTwo = React.createClass({
   render: function (){
     return(
       <div>
-        Component two
+        {this.props.text}
       </div>
     );
   }
