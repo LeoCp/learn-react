@@ -1,0 +1,25 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoCp/learn-react.git"
+  },
+  "author": "LeoCp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoCp/learn-react/issues"
+  },
+  "homepage": "https://github.com/LeoCp/learn-react#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "react": "^15.2.1",
+    "react-bootstrap": "^0.29.5",
+    "react-dom": "^15.2.1"
+  }
+}
