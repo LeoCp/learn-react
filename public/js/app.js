@@ -1,39 +1,34 @@
 'use strict';
 
-var Jumbotron = React.createClass({
+var App = React.createClass({
 
-    //Validation
-    propTypes: {
-      title:React.PropTypes.string.isRequired,
-      text:React.PropTypes.string.isRequired
+    getInitialState: function () {
+      return {
+          text:"This is the text"
+      };
     },
 
-    //
-    getDefaultProps: function (){
-      return{
-          title:"This is the title",
-          text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      }
-    },
-
-    //
     render: function () {
         return (
             <div>
               <div className="jumbotron">
-                <h1>{this.props.title}</h1>
-                <p>{this.props.text}</p>
-                <button onClick={this.onClick.bind(this, "Hello")}className="btn btn-primary">Learn more</button>
+                <h1>{this.state.text}</h1>
+                <form>
+                  <input type="text" className="form-control" onChange={this.changeText} value={this.state.text} /><br/>
+                  <button className="btn btn-primary">Add</button>
+                </form>
               </div>
             </div>
         )
     },
-    onClick: function (greeting) {
-      alert(greeting);
+    changeText: function (e){
+        this.setState({
+          text: e.target.value
+        });
     }
-})
+});
 
 ReactDOM.render(
-    <Jumbotron/>,
+    <App/>,
     document.getElementById("jumbotron")
 )
